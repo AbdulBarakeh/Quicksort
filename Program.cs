@@ -19,37 +19,14 @@ namespace Quicksort
             }
         }
         private static int[] Sort(int[] array, int first, int last){
-            if (first < last)
-            {
-                var pivot = Partition(array, first, last);
-                Sort(array,first,pivot);
-                Sort(array,pivot+1,last);
-            }
 
-            return array;
         }
         private static void Swap(int[] array, int first, int last)
         {
-            var temp = array[first];
-            array[first] = array[last];
-            array[last] = temp;
+
         }
         private static int Partition(int[] array, int first , int last){
-            int pivot = array[first];
-            int swapIndex = first;
 
-            for (int testIndex = first+1; testIndex < last; testIndex++)
-            {
-                if (array[testIndex]<pivot)
-                {
-                    swapIndex++;
-                    Swap(array, testIndex, swapIndex);
-                }
-
-            }
-            Swap(array, first, swapIndex);
-
-            return swapIndex;
         }
 
 
